@@ -4,3 +4,34 @@ h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-bottom: 2px solid black;
 }
+.content-wrapper{
+    border: 1px, solid, black;
+}
+
+.top-content-box{
+    display: flex;
+    border: 1px dotted black;
+    margin-bottom: 8px;
+    margin-right: 500px;
+    padding-left: 24px;
+    padding-right: 200px;
+    
+}
+.column{
+    flex:50%;
+    
+    
+}
+
+.content-box {
+    border: 1px dotted black;
+    padding-left: 24px;
+    padding-right: 200px;
+    margin-bottom: 8px;
+    margin-right: 500px;
+
+}
+
+a:hover{
+    color: #CC5500;
+}
