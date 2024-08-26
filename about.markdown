@@ -1,7 +1,7 @@
-# about.md
 ---
 layout: default
 title: About
+permalink: /about/
 ---
 
 # About
