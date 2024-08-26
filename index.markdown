@@ -3,6 +3,6 @@ layout: default
 title: Home
 ---
 
-# Welcome to Shaunak Divine
+# Welcome to my personal website
 
-This is a collection of my various projects and thoughts.
+
