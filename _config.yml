@@ -36,6 +36,7 @@ nav:
   - name: About
     link: /about/
 
+
 # Build settings
 theme: jekyll-theme-dinky
 remote_theme: pages-themes/dinky@v0.2.0
