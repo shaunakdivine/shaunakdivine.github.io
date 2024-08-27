@@ -7,4 +7,5 @@ permalink: /projects/
 # My Projects
 
 ## [Misinformation Detection On Reddit Using Post-to-Post Networks](/projects/project1/)
-A detailed look into applying machine learning models in the finance sector. [View PDF](assets/pdfs/machine-learning-finance.pdf)
+A detailed look at misinformation spread on Reddit using a GCN framework. [View PDF](/assets/pdfs/divine_young_final_report.pdf)
+
