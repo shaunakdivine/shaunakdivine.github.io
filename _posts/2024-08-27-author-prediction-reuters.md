@@ -387,7 +387,7 @@ plt.show()
 
 
     
-![png](assets/reutersCorpus_files/reutersCorpus_8_0.png)
+![png](/assets/reutersCorpus_files/reutersCorpus_8_0.png)
     
 
 
