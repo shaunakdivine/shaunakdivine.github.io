@@ -13,4 +13,4 @@ This research project explores the spread of misinformation on Reddit using a gr
 
 ### PDF Preview:
 
-<iframe src="/assets/pdfs/divine_young_final_report.pdf" style="width:100%; height:600px;" frameborder="0"></iframe>
+<iframe src="/assets/pdfs/GCNfinalreport.pdf" style="width:100%; height:600px;" frameborder="0"></iframe>
