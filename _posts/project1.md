@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Misinformation Detection On Reddit Using Post-to-Post Networks
+title: Project 1
 permalink: /projects/project1/
 ---
 
