@@ -1,7 +1,10 @@
 ---
 layout: default
-title: Project 1
+title: GCN FakeNews Reddit
+date:   2024-08-26 10:21:21 -0500
+categories: machine learning
 permalink: /projects/project1/
+
 ---
 
 # Misinformation Detection On Reddit Using Post-to-Post Networks
