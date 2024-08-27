@@ -11,7 +11,7 @@ title: Home
 Hi, I'm Shaunak! I'm passionate about finance, machine learning, and engineering. Explore my projects, blog, and more.
 
 ## Featured Projects
-- **[Project 1: Misinformation Detection](projects/project1/)** - A study on misinformation spread on Reddit.
+- **[Misinformation Detection](projects/project1/)** - A study on misinformation spread on Reddit.
 
 
 ## Contact Me
