@@ -4,8 +4,6 @@ title: Home
 ---
 
 
-<img src="/assets/images/banner.jpg" alt="Banner" style="width:100%; height:auto;">
-
 # Welcome to My Personal Website
 
 
@@ -19,3 +17,5 @@ Hi, I'm Shaunak! I'm passionate about finance, machine learning, and engineering
 ## Contact Me
 - [Email Me](mailto:shaunak.divine@gmail.com)
 - [GitHub Profile](https://github.com/shaunakdivine)
+
+<img src="/assets/images/banner.jpg" alt="Banner" style="width:100%; height:auto;">
