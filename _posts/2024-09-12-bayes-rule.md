@@ -21,68 +21,61 @@ This problem is a classic application of **Bayes' Rule**, involving conditional 
 
 To find the probability that we picked the unfair coin given 10 heads, we’ll use Bayes' Rule:
 
-\[
-P(A|B) = \\frac{P(B|A)P(A)}{P(B)}
-\]
+$$ P(A|B) = \\frac{P(B|A)P(A)}{P(B)} $$
 
 Where:
-- \(A\) is the event that we picked the unfair coin.
-- \(B\) is the event that we observed 10 heads in a row.
+- \( A \) is the event that we picked the unfair coin.
+- \( B \) is the event that we observed 10 heads in a row.
 
 Let’s break this down step by step:
 
-### 1. **Prior Probability \(P(A)\)**
+### 1. **Prior Probability \( P(A) \)**
+
 The prior probability that we picked the unfair coin is the ratio of unfair coins to total coins:
-\[
-P(A) = \\frac{1}{1000}
-\]
 
-### 2. **Likelihood \(P(B|A)\)**
+$$ P(A) = \\frac{1}{1000} $$
+
+### 2. **Likelihood \( P(B|A) \)**
+
 The likelihood is the probability of observing 10 heads given that we picked the unfair coin. Since this coin always lands heads, the probability is simply 1:
-\[
-P(B|A) = 1
-\]
 
-### 3. **Complement Prior \(P(\neg A)\)**
+$$ P(B|A) = 1 $$
+
+### 3. **Complement Prior \( P(\neg A) \)**
+
 The probability of not picking the unfair coin (picking a fair coin) is:
-\[
-P(\neg A) = \\frac{999}{1000}
-\]
 
-### 4. **Complement Likelihood \(P(B|\neg A)\)**
+$$ P(\neg A) = \\frac{999}{1000} $$
+
+### 4. **Complement Likelihood \( P(B|\neg A) \)**
+
 Now, what’s the probability of getting 10 heads in a row given that we picked a fair coin? Each flip has a probability of \( \\frac{1}{2} \) of landing heads, so for 10 heads in a row:
-\[
-P(B|\neg A) = \\left(\\frac{1}{2}\\right)^{10} = \\frac{1}{1024}
-\]
 
-Here's where the quick mental math comes into play. If you were like me and grew up playing 2048, we can quickly reason that 2^10 is 1024. However, to simplify this problem if we didn't have a calculator, we can assume that:
-\[
-\\left(\\frac{1}{2}\\right)^{10} ~= \\1000
-\]
+$$ P(B|\neg A) = \\left(\\frac{1}{2}\\right)^{10} = \\frac{1}{1024} $$
 
+Here's where the quick mental math comes into play. If you were like me and grew up playing 2048, we can quickly reason that \( 2^{10} \) is 1024. However, to simplify this problem if we didn't have a calculator, we can assume that:
 
-### 5. **Total Probability \(P(B)\)**
+$$ \\left(\\frac{1}{2}\\right)^{10} \\approx \\frac{1}{1000} $$
+
+### 5. **Total Probability \( P(B) \)**
+
 The total probability of observing 10 heads can be calculated using the law of total probability:
-\[
-P(B) = P(B|A)P(A) + P(B|\neg A)P(\neg A)
-\]
+
+$$ P(B) = P(B|A)P(A) + P(B|\neg A)P(\neg A) $$
+
 Substituting the values:
-\[
-P(B) = 1 \\cdot \\frac{1}{1000} + \\frac{1}{1024} \\cdot \\frac{999}{1000}
-\]
-\[
-P(B) = \\frac{1}{1000} + \\frac{999}{1024 \\times 1000}
-\]
-\[
-P(B) \\approx \\frac{1}{1000} + \\frac{0.975}{1000} = \\frac{1.975}{1000}
-\]
+
+$$ P(B) = 1 \\cdot \\frac{1}{1000} + \\frac{1}{1024} \\cdot \\frac{999}{1000} $$
+
+$$ P(B) = \\frac{1}{1000} + \\frac{999}{1024 \\times 1000} $$
+
+$$ P(B) \\approx \\frac{1}{1000} + \\frac{0.975}{1000} = \\frac{1.975}{1000} $$
 
 ### 6. **Applying Bayes' Rule**
+
 Now, we can calculate the posterior probability using Bayes’ Rule:
-\[
-P(A|B) = \\frac{P(B|A)P(A)}{P(B)} = \\frac{1 \\cdot \\frac{1}{1000}}{\\frac{1.975}{1000}} = \\frac{1}{1.975} \\approx 0.506
-\]
+
+$$ P(A|B) = \\frac{P(B|A)P(A)}{P(B)} = \\frac{1 \\cdot \\frac{1}{1000}}{\\frac{1.975}{1000}} = \\frac{1}{1.975} \\approx 0.506 $$
 
 So, given 10 heads in a row, the probability that you picked the unfair coin is about **50.6%**.
-
 
