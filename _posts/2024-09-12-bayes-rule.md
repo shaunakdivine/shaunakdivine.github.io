@@ -167,3 +167,115 @@ The ratio \($$ \frac{K}{N - K} $$\) must equal \($$ \left( \frac{1}{2} \right)^n
 
 Now we can see the general form of the equation and get a better understanding of how the variables affect the outcome. With this in mind, I then wanted to use Python to adjust the variables and get a direct representation of how the probability changes.
 
+## Graphical Exploration
+
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def posterior_probability(K, N, n):
+    numerator = K 
+    denominator = K + (N - K) * (0.5) ** n
+    return numerator / denominator
+
+def plot_posterior_vs_N(K=1, n=10, N_max=5000):
+    N_values = np.arange(K + 1, N_max)
+    probabilities = [posterior_probability(K, N, n) for N in N_values]
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(N_values, probabilities, label=f'K={K}, n={n}')
+    plt.axhline(0.5, color='r', linestyle='--', label='P(U|H) = 0.5')
+    plt.xlabel('Total Number of Coins (N)')
+    plt.ylabel('Posterior Probability P(U|H)')
+    plt.title('Posterior Probability vs. Total Number of Coins (N)')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+def plot_posterior_vs_K(N=1000, n=10, K_max=100):
+    K_values = np.arange(1, K_max)
+    probabilities = [posterior_probability(K, N, n) for K in K_values]
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(K_values, probabilities, label=f'N={N}, n={n}')
+    plt.axhline(0.5, color='r', linestyle='--', label='P(U|H) = 0.5')
+    plt.xlabel('Number of Unfair Coins (K)')
+    plt.ylabel('Posterior Probability P(U|H)')
+    plt.title('Posterior Probability vs. Number of Unfair Coins (K)')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+def plot_posterior_vs_n(K=1, N=1000, n_max=20):
+    n_values = np.arange(1, n_max)
+    probabilities = [posterior_probability(K, N, n) for n in n_values]
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(n_values, probabilities, label=f'K={K}, N={N}')
+    plt.axhline(0.5, color='r', linestyle='--', label='P(U|H) = 0.5')
+    plt.xlabel('Number of Consecutive Heads (n)')
+    plt.ylabel('Posterior Probability P(U|H)')
+    plt.title('Posterior Probability vs. Number of Consecutive Heads (n)')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+
+plot_posterior_vs_N(K=1, n=10, N_max=10000)
+plot_posterior_vs_K(N=1000, n=10, K_max=200)
+plot_posterior_vs_n(K=1, N=1000, n_max=25)
+
+```
+
+
+    
+![png](/assets/coins_files/coins_1_0.png)
+    
+
+
+
+    
+![png](/assets/coins_files/coins_1_1.png)
+    
+
+
+
+    
+![png](/assets/coins_files/coins_1_2.png)
+    
+
+
+The first plot shows how the probability varies with the total number of coins when the amount of unfair coins and heads flipped are held constant. We can see how quickly the total number begins to impact the final probability drastically. When the total coins approaches 4,000, we can already see that the probability has dropped to approximately 20%. On the other end, we can see that if we cut the amount of coins in half to about 500, the probability increases to around 70%. 
+
+This second graph explores how the posterior probability changes with the amount of unfair coins to choose from. This plot is interesting because it shows how drastically this factor changes the outcome. Even changing the percent of unfair coins from .1% to 2.5%, we can already see that the probability is close to 95%, approaching 100%. This goes to show the importance of this factor on the outcome.
+
+The third graph shows how altering the number of consectutive heads affects the outcome. Initially, with a small number of heads, the posterior probability is very low, indicating a low likelihood of having picked the unfair coin. However, as the number of heads increases, the posterior probability grows exponentially and crosses the 50% threshold after about 10 consecutive heads. This factor also has a lot of variability, showing its impact on the outcome as well.
+
+Finally, the code and plot below wrap up my discussion of this problem, as it shows a nice overview of my findings. The contour plot puts all the different probability levels on a single plot, showing how the number of consecutive heads and total coins intersect. 
+
+
+```python
+def plot_contour_N_n(K=1, N_max=2000, n_max=20):
+    N_values = np.arange(K + 1, N_max)
+    n_values = np.arange(1, n_max)
+    N_grid, n_grid = np.meshgrid(N_values, n_values)
+    probabilities = np.vectorize(posterior_probability)(K, N_grid, n_grid)
+
+    plt.figure(figsize=(10, 6))
+    cp = plt.contour(N_values, n_values, probabilities, levels=20)
+    plt.clabel(cp, inline=True, fontsize=10)
+    plt.xlabel('Total Number of Coins (N)')
+    plt.ylabel('Number of Consecutive Heads (n)')
+    plt.title('Contour Plot of P(U|H) over N and n')
+    plt.show()
+
+plot_contour_N_n(K=1, N_max=2000, n_max=20)
+
+```
+
+
+    
+![png](/assets/coins_files/coins_3_0.png)
+    
+
