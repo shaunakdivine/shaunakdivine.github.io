@@ -9,9 +9,7 @@ permalink: /blog/blog1/
 
 # Understanding Coin Flips, Probability, and Bayes' Rule – A Deeper Dive
 
-## Introduction
-
-Recently, I received a thought-provoking technical question that explores probability and Bayesian reasoning, but can simplify down with some creative mental math. The question goes like this:
+Recently, I received a thought-provoking technical question that explores probability and Bayes' Rule. It's a fun problem that seems complicated at first but can simplify down with some creative mental math. The question goes like this:
 
 > You have 1000 coins, 1 of which has heads on both sides, and the other 999 are fair. You randomly choose a coin and toss it 10 times. Each time, it lands heads. What is the probability that you picked the unfair coin?
 
@@ -21,25 +19,31 @@ This problem is a classic application of **Bayes' Rule**, involving conditional 
 
 To find the probability that we picked the unfair coin given 10 heads, we’ll use Bayes' Rule:
 
-$$ P(A|B) = \\frac{P(B|A)P(A)}{P(B)} $$
+$$ 
+P(A|B) = \frac{P(B|A)P(A)}{P(B)} 
+$$
 
 Where:
 - \( A \) is the event that we picked the unfair coin.
 - \( B \) is the event that we observed 10 heads in a row.
 
-Let’s break this down step by step:
+So now let’s break this down step by step:
 
 ### 1. **Prior Probability \( P(A) \)**
 
 The prior probability that we picked the unfair coin is the ratio of unfair coins to total coins:
 
-$$ P(A) = \\frac{1}{1000} $$
+$$ 
+P(A) = \frac{1}{1000} 
+$$
 
 ### 2. **Likelihood \( P(B|A) \)**
 
 The likelihood is the probability of observing 10 heads given that we picked the unfair coin. Since this coin always lands heads, the probability is simply 1:
 
-$$ P(B|A) = 1 $$
+$$ 
+P(B|A) = 1 
+$$
 
 ### 3. **Complement Prior \( P(\neg A) \)**
 
