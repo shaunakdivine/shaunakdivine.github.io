@@ -45,7 +45,7 @@ $$
 P(B|A) = 1 
 $$
 
-### 3. **Complement Prior $$\( P(\neg A) $$\)$$**
+### 3. **Complement Prior \($$ P(\neg A) $$\)**
 
 The probability of not picking the unfair coin (picking a fair coin) is:
 
@@ -53,15 +53,21 @@ $$
 P(\neg A) = \frac{999}{1000}
 $$
 
-### 4. **Complement Likelihood \( P(B|\neg A) \)**
+### 4. **Complement Likelihood \($$ P(B|\neg A) $$\)**
 
-Now, what’s the probability of getting 10 heads in a row given that we picked a fair coin? Each flip has a probability of \( \\frac{1}{2} \) of landing heads, so for 10 heads in a row:
+Now, what’s the probability of getting 10 heads in a row given that we picked a fair coin? Each flip has a probability of \($$ \frac{1}{2} $$\) of landing heads, so for 10 heads in a row:
 
-$$ P(B|\neg A) = \\left(\\frac{1}{2}\\right)^{10} = \\frac{1}{1024} $$
+$$
+P(B|\neg A) = \left(\frac{1}{2}\right)^{10} = \frac{1}{1024}
+$$
 
-Here's where the quick mental math comes into play. If you were like me and grew up playing 2048, we can quickly reason that \( 2^{10} \) is 1024. However, to simplify this problem if we didn't have a calculator, we can assume that:
 
-$$ \\left(\\frac{1}{2}\\right)^{10} \\approx \\frac{1}{1000} $$
+Here's where the quick mental math comes into play. If you were like me and grew up playing 2048, we can quickly reason that \($$ 2^{10} $$\) is 1024. However, to simplify this problem if we didn't have a calculator, we can assume that:
+
+$$
+\left(\frac{1}{2}\right)^{10} \approx \frac{1}{1000}
+$$
+
 
 ### 5. **Total Probability \( P(B) \)**
 
