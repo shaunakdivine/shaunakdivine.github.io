@@ -129,7 +129,7 @@ Where:
 - \($$ P(H|U) = 1 $$\), because an unfair coin (double-headed) always lands heads.
 - \($$ P(H|F) = \left( \frac{1}{2} \right)^n $$\), because a fair coin has a 0.5 chance of landing heads each toss.
 
-#### Simplifying the Equation:
+### Simplifying the Equation:
 
 Plugging these probabilities into Bayes' theorem:
 
@@ -137,45 +137,33 @@ $$
 P(U|H) = \frac{\frac{K}{N}}{\frac{K}{N} + \left( \frac{1}{2} \right)^n \cdot \frac{N - K}{N}} = \frac{K}{K + (N - K) \cdot \left( \frac{1}{2} \right)^n}
 $$
 
-#### Setting \( P(U|H) = 0.5 \):
-
-To find the conditions that make \( P(U|H) = 0.5 \):
-
 $$
 \frac{K}{K + (N - K) \cdot \left( \frac{1}{2} \right)^n} = 0.5
 $$
-
-#### Solving for \( K \) and \( N \):
-
-Multiply both sides by the denominator:
 
 $$
 2K = K + (N - K) \cdot \left( \frac{1}{2} \right)^n
 $$
 
-Subtract \( K \) from both sides:
-
 $$
 K = (N - K) \cdot \left( \frac{1}{2} \right)^n
 $$
-
-Rearranging terms:
 
 $$
 \frac{K}{N - K} = \left( \frac{1}{2} \right)^n
 $$
 
-#### Determining the Ratio:
+### Determining the Ratio:
 
-The ratio \( \frac{K}{N - K} \) must equal \( \left( \frac{1}{2} \right)^n \) to maintain a 50% posterior probability. This means:
+The ratio \($$ \frac{K}{N - K} $$\) must equal \($$ \left( \frac{1}{2} \right)^n $$\) to maintain a 50% posterior probability. This means:
 
-- As \( n \) increases, \( \left( \frac{1}{2} \right)^n \) decreases exponentially.
-- To compensate, the ratio \( \frac{K}{N - K} \) must also decrease exponentially.
-- This requires increasing \( N \) exponentially while keeping \( K \) fixed or adjusting \( K \) accordingly.
+- As \($$ n $$\) increases, \($$ \left( \frac{1}{2} \right)^n $$\) decreases exponentially.
+- To compensate, the ratio \($$ \frac{K}{N - K} $$\) must also decrease exponentially.
+- This requires increasing \($$ N $$\) exponentially while keeping \($$ K $$\) fixed or adjusting \($$ K $$\) accordingly.
 
-#### General Formula for \( N \):
+### General Formula for \( N \):
 
-Solving for \( N \):
+Solving for \($$ N $$\):
 
 $$
 N = K \left( 1 + 2^n \right)
