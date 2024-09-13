@@ -124,10 +124,11 @@ P(U|H) = \frac{P(H|U) \cdot P(U)}{P(H|U) \cdot P(U) + P(H|F) \cdot P(F)}
 $$
 
 Where:
-- \($$ P(U) = \frac{K}{N} $$\) is the prior probability of picking an unfair coin.
-- \($$ P(F) = \frac{N - K}{N} $$\) is the prior probability of picking a fair coin.
-- \($$ P(H|U) = 1 $$\), because an unfair coin (double-headed) always lands heads.
-- \($$ P(H|F) = \left( \frac{1}{2} \right)^n $$\), because a fair coin has a 0.5 chance of landing heads each toss.
+- $P(U) = \frac{K}{N}$ is the prior probability of picking an unfair coin.
+- $P(F) = \frac{N - K}{N}$ is the prior probability of picking a fair coin.
+- $P(H|U) = 1$, because an unfair coin (double-headed) always lands heads.
+- $P(H|F) = \left( \frac{1}{2} \right)^n$, because a fair coin has a 0.5 chance of landing heads each toss.
+
 
 ### Simplifying the Equation:
 
@@ -138,19 +139,19 @@ P(U|H) = \frac{\frac{K}{N}}{\frac{K}{N} + \left( \frac{1}{2} \right)^n \cdot \fr
 $$
 
 $$
-\frac{K}{K + (N - K) \cdot \left( \frac{1}{2} \right)^n} = 0.5
+.5 = \frac{K}{K + (N - K) \cdot \left( \frac{1}{2} \right)^n}
 $$
 
 $$
-2K = K + (N - K) \cdot \left( \frac{1}{2} \right)^n
+K + (N - K) \cdot \left( \frac{1}{2} \right)^n = 2K
 $$
 
 $$
-K = (N - K) \cdot \left( \frac{1}{2} \right)^n
+(N - K) \cdot \left( \frac{1}{2} \right)^n = K
 $$
 
 $$
-\frac{K}{N - K} = \left( \frac{1}{2} \right)^n
+\left( \frac{1}{2} \right)^n = \frac{K}{N - K}
 $$
 
 ### Determining the Ratio:
