@@ -114,21 +114,20 @@ $$
 P(A|B) = \frac{P(B|A)P(A)}{P(B)} = \frac{1 \cdot \frac{1}{1000}}{\frac{1.975}{1000}} = \frac{1}{1.975} \approx 0.506 
 $$
 
+
 ## Solving the General Case
 
 I remember solving this problem for the first time, and I was surprised to see the result of approximately 50%. While this was cool, I immediately wanted to explore the effect of changing some of the variables. At a core level, I knew the result depended on the ratio of unfair coins to total coins, so I first wanted to identify this relationship. I began by trying to find how to keep the result steady at 50% while altering some of the variables. Let's say the relationship between the number of unfair coins \( K \), the total number of coins \( N \), and the number of consecutive heads \( n \) is given by:
-
-We start by applying Bayes' theorem to compute the posterior probability \( P(U|H) \) that the coin is unfair (\( U \)) given that we observed \( n \) consecutive heads (\( H \)):
 
 $$
 P(U|H) = \frac{P(H|U) \cdot P(U)}{P(H|U) \cdot P(U) + P(H|F) \cdot P(F)}
 $$
 
 Where:
-- \( P(U) = \frac{K}{N} \) is the prior probability of picking an unfair coin.
-- \( P(F) = \frac{N - K}{N} \) is the prior probability of picking a fair coin.
-- \( P(H|U) = 1 \), because an unfair coin (double-headed) always lands heads.
-- \( P(H|F) = \left( \frac{1}{2} \right)^n \), because a fair coin has a 0.5 chance of landing heads each toss.
+- \($$ P(U) = \frac{K}{N} $$\) is the prior probability of picking an unfair coin.
+- \($$ P(F) = \frac{N - K}{N} $$\) is the prior probability of picking a fair coin.
+- \($$ P(H|U) = 1 $$\), because an unfair coin (double-headed) always lands heads.
+- \($$ P(H|F) = \left( \frac{1}{2} \right)^n $$\), because a fair coin has a 0.5 chance of landing heads each toss.
 
 #### Simplifying the Equation:
 
