@@ -80,15 +80,15 @@ $$ P(B) = P(B|A)P(A) + P(B|\neg A)P(\neg A) $$
 Substituting the values:
 
 $$ 
-P(B) = 1 \\cdot \\frac{1}{1000} + \\frac{1}{1024} \\cdot \\frac{999}{1000} 
+P(B) = 1 \cdot \frac{1}{1000} + \frac{1}{1024} \cdot \frac{999}{1000}
 $$
 
 $$ 
-P(B) = \\frac{1}{1000} + \\frac{999}{1024 \\times 1000} 
+P(B) = \frac{1}{1000} + \frac{999}{1024 \times 1000} 
 $$
 
 $$ 
-P(B) \\approx \\frac{1}{1000} + \\frac{0.975}{1000} = \\frac{1.975}{1000} 
+P(B) \approx \frac{1}{1000} + \frac{0.975}{1000} = \frac{1.975}{1000} 
 $$
 
 ### 6. **Applying Bayes' Rule**
