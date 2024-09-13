@@ -91,7 +91,7 @@ $$
 P(B) \approx \frac{1}{1000} + \frac{0.975}{1000} = \frac{1.975}{1000} 
 $$
 
-However, if we apply our assumption from earlier, we can treat \( \frac{1}{1024} \) as approximately \( \frac{1}{1000} \) and \( \frac{999}{1000} \) as approximately 1. 
+However, if we apply our assumption from earlier, we can treat \( $$\frac{1}{1024} $$\) as approximately \( $$\frac{1}{1000} $$\) and \( $$\frac{999}{1000} $$\) as approximately 1. 
 
 This gives us:
 
