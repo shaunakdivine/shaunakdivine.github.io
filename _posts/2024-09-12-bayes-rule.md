@@ -102,12 +102,85 @@ $$
 
 ### 6. **Putting it All Together with Bayes' Rule**
 
-Now, we can calculate the posterior probability using Bayes’ Rule:
+Now, we can quickly calculate the posterior probability using Bayes’ Rule and our previous assumption:
+
+$$ 
+P(A|B) = \frac{P(B|A)P(A)}{P(B)} = \frac{1 \cdot \frac{1}{1000}}{\frac{2}{1000}} = \frac{1}{2} \approx 0.5 
+$$
+
+So, given 10 heads in a row, the probability that you picked the unfair coin simplifies down to approximately **50%**. I've also worked out the more precise answer below:
 
 $$ 
 P(A|B) = \frac{P(B|A)P(A)}{P(B)} = \frac{1 \cdot \frac{1}{1000}}{\frac{1.975}{1000}} = \frac{1}{1.975} \approx 0.506 
 $$
 
-So, given 10 heads in a row, the probability that you picked the unfair coin is about **50.6%**.
+## Solving the General Case
 
+I remember solving this problem for the first time, and I was surprised to see the result of approximately 50%. While this was cool, I immediately wanted to explore the effect of changing some of the variables. At a core level, I knew the result depended on the ratio of unfair coins to total coins, so I first wanted to identify this relationship. I began by trying to find how to keep the result steady at 50% while altering some of the variables. Let's say the relationship between the number of unfair coins \( K \), the total number of coins \( N \), and the number of consecutive heads \( n \) is given by:
+
+We start by applying Bayes' theorem to compute the posterior probability \( P(U|H) \) that the coin is unfair (\( U \)) given that we observed \( n \) consecutive heads (\( H \)):
+
+$$
+P(U|H) = \frac{P(H|U) \cdot P(U)}{P(H|U) \cdot P(U) + P(H|F) \cdot P(F)}
+$$
+
+Where:
+- \( P(U) = \frac{K}{N} \) is the prior probability of picking an unfair coin.
+- \( P(F) = \frac{N - K}{N} \) is the prior probability of picking a fair coin.
+- \( P(H|U) = 1 \), because an unfair coin (double-headed) always lands heads.
+- \( P(H|F) = \left( \frac{1}{2} \right)^n \), because a fair coin has a 0.5 chance of landing heads each toss.
+
+#### Simplifying the Equation:
+
+Plugging these probabilities into Bayes' theorem:
+
+$$
+P(U|H) = \frac{\frac{K}{N}}{\frac{K}{N} + \left( \frac{1}{2} \right)^n \cdot \frac{N - K}{N}} = \frac{K}{K + (N - K) \cdot \left( \frac{1}{2} \right)^n}
+$$
+
+#### Setting \( P(U|H) = 0.5 \):
+
+To find the conditions that make \( P(U|H) = 0.5 \):
+
+$$
+\frac{K}{K + (N - K) \cdot \left( \frac{1}{2} \right)^n} = 0.5
+$$
+
+#### Solving for \( K \) and \( N \):
+
+Multiply both sides by the denominator:
+
+$$
+2K = K + (N - K) \cdot \left( \frac{1}{2} \right)^n
+$$
+
+Subtract \( K \) from both sides:
+
+$$
+K = (N - K) \cdot \left( \frac{1}{2} \right)^n
+$$
+
+Rearranging terms:
+
+$$
+\frac{K}{N - K} = \left( \frac{1}{2} \right)^n
+$$
+
+#### Determining the Ratio:
+
+The ratio \( \frac{K}{N - K} \) must equal \( \left( \frac{1}{2} \right)^n \) to maintain a 50% posterior probability. This means:
+
+- As \( n \) increases, \( \left( \frac{1}{2} \right)^n \) decreases exponentially.
+- To compensate, the ratio \( \frac{K}{N - K} \) must also decrease exponentially.
+- This requires increasing \( N \) exponentially while keeping \( K \) fixed or adjusting \( K \) accordingly.
+
+#### General Formula for \( N \):
+
+Solving for \( N \):
+
+$$
+N = K \left( 1 + 2^n \right)
+$$
+
+Now we can see the general form of the equation and get a better understanding of how the variables affect the outcome. With this in mind, I then wanted to use Python to adjust the variables and get a direct representation of how the probability changes.
 
