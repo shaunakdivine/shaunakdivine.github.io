@@ -128,9 +128,9 @@ Where:
 
 - \($$ P(F) = \frac{N - K}{N} $$\) is the prior probability of picking a fair coin.
 
-- \($$ P(H|U) = 1 $$\), because an unfair coin (double-headed) always lands heads.
+- \($$ P(H \mid U) = 1 $$\), because an unfair coin (double-headed) always lands heads.
 
-- \($$ P(H|F) = \left( \frac{1}{2} \right)^n $$\), because a fair coin has a 0.5 chance of landing heads each toss.
+- \($$ P(H \mid F) = \left( \frac{1}{2} \right)^n $$\), because a fair coin has a 0.5 chance of landing heads each toss.
 
 
 ### Simplifying the Equation:
@@ -166,12 +166,6 @@ The ratio \($$ \frac{K}{N - K} $$\) must equal \($$ \left( \frac{1}{2} \right)^n
 - This requires increasing \($$ N $$\) exponentially while keeping \($$ K $$\) fixed or adjusting \($$ K $$\) accordingly.
 
 ### General Formula for \( N \):
-
-Solving for \($$ N $$\):
-
-$$
-N = K \left( 1 + 2^n \right)
-$$
 
 Now we can see the general form of the equation and get a better understanding of how the variables affect the outcome. With this in mind, I then wanted to use Python to adjust the variables and get a direct representation of how the probability changes.
 
