@@ -91,11 +91,23 @@ $$
 P(B) \approx \frac{1}{1000} + \frac{0.975}{1000} = \frac{1.975}{1000} 
 $$
 
-### 6. **Applying Bayes' Rule**
+However, if we apply our assumption from earlier, we can treat \( \frac{1}{1024} \) as approximately \( \frac{1}{1000} \) and \( \frac{999}{1000} \) as approximately 1. 
+
+This gives us:
+
+$$
+P(B) \approx \frac{1}{1000} + \frac{1}{1000} = \frac{2}{1000}
+$$
+
+
+### 6. **Putting it All Together with Bayes' Rule**
 
 Now, we can calculate the posterior probability using Bayes’ Rule:
 
-$$ P(A|B) = \\frac{P(B|A)P(A)}{P(B)} = \\frac{1 \\cdot \\frac{1}{1000}}{\\frac{1.975}{1000}} = \\frac{1}{1.975} \\approx 0.506 $$
+$$ 
+P(A|B) = \frac{P(B|A)P(A)}{P(B)} = \frac{1 \cdot \frac{1}{1000}}{\frac{1.975}{1000}} = \frac{1}{1.975} \approx 0.506 
+$$
 
 So, given 10 heads in a row, the probability that you picked the unfair coin is about **50.6%**.
+
 
