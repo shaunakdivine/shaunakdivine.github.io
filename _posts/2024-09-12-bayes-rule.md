@@ -124,10 +124,10 @@ P(U|H) = \frac{P(H|U) \cdot P(U)}{P(H|U) \cdot P(U) + P(H|F) \cdot P(F)}
 $$
 
 Where:
-- $P(U) = \frac{K}{N}$ is the prior probability of picking an unfair coin.
-- $P(F) = \frac{N - K}{N}$ is the prior probability of picking a fair coin.
-- $P(H|U) = 1$, because an unfair coin (double-headed) always lands heads.
-- $P(H|F) = \left( \frac{1}{2} \right)^n$, because a fair coin has a 0.5 chance of landing heads each toss.
+- \($$ P(U) = \frac{K}{N} $$\) is the prior probability of picking an unfair coin.
+- \($$ P(F) = \frac{N - K}{N} $$\) is the prior probability of picking a fair coin.
+- `\($$ P(H|U) = 1 $$\)`, because an unfair coin (double-headed) always lands heads.
+- `\($$ P(H|F) = \left( \frac{1}{2} \right)^n $$\)`, because a fair coin has a 0.5 chance of landing heads each toss.
 
 
 ### Simplifying the Equation:
