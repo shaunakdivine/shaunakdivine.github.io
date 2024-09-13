@@ -45,11 +45,13 @@ $$
 P(B|A) = 1 
 $$
 
-### 3. **Complement Prior \( P(\neg A) \)**
+### 3. **Complement Prior $$\( P(\neg A) $$\)$$**
 
 The probability of not picking the unfair coin (picking a fair coin) is:
 
-$$ P(\neg A) = \\frac{999}{1000} $$
+$$
+P(\neg A) = \frac{999}{1000}
+$$
 
 ### 4. **Complement Likelihood \( P(B|\neg A) \)**
 
