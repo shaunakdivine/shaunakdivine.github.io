@@ -62,11 +62,13 @@ P(B|\neg A) = \left(\frac{1}{2}\right)^{10} = \frac{1}{1024}
 $$
 
 
-Here's where the quick mental math comes into play. If you were like me and grew up playing 2048, we can quickly reason that \($$ 2^{10} $$\) is 1024. However, to simplify this problem if we didn't have a calculator, we can assume that:
+Here's where the quick mental math comes into play. If you were like me and grew up playing 2048, we can quickly reason that \($$ 2^{10} $$\) is 1024. However, to simplify this problem, we can assume that:
 
 $$
 \left(\frac{1}{2}\right)^{10} \approx \frac{1}{1000}
 $$
+
+This assumption will help us later with simplifying the expression without the use of a calculator.
 
 
 ### 5. **Total Probability \( P(B) \)**
@@ -77,11 +79,17 @@ $$ P(B) = P(B|A)P(A) + P(B|\neg A)P(\neg A) $$
 
 Substituting the values:
 
-$$ P(B) = 1 \\cdot \\frac{1}{1000} + \\frac{1}{1024} \\cdot \\frac{999}{1000} $$
+$$ 
+P(B) = 1 \\cdot \\frac{1}{1000} + \\frac{1}{1024} \\cdot \\frac{999}{1000} 
+$$
 
-$$ P(B) = \\frac{1}{1000} + \\frac{999}{1024 \\times 1000} $$
+$$ 
+P(B) = \\frac{1}{1000} + \\frac{999}{1024 \\times 1000} 
+$$
 
-$$ P(B) \\approx \\frac{1}{1000} + \\frac{0.975}{1000} = \\frac{1.975}{1000} $$
+$$ 
+P(B) \\approx \\frac{1}{1000} + \\frac{0.975}{1000} = \\frac{1.975}{1000} 
+$$
 
 ### 6. **Applying Bayes' Rule**
 
