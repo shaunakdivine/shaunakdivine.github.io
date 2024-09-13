@@ -157,15 +157,13 @@ $$
 \left( \frac{1}{2} \right)^n = \frac{K}{N - K}
 $$
 
-### Determining the Ratio:
+### Looking at the Ratio:
 
 The ratio \($$ \frac{K}{N - K} $$\) must equal \($$ \left( \frac{1}{2} \right)^n $$\) to maintain a 50% posterior probability. This means:
 
 - As \($$ n $$\) increases, \($$ \left( \frac{1}{2} \right)^n $$\) decreases exponentially.
 - To compensate, the ratio \($$ \frac{K}{N - K} $$\) must also decrease exponentially.
 - This requires increasing \($$ N $$\) exponentially while keeping \($$ K $$\) fixed or adjusting \($$ K $$\) accordingly.
-
-### General Formula for \( N \):
 
 Now we can see the general form of the equation and get a better understanding of how the variables affect the outcome. With this in mind, I then wanted to use Python to adjust the variables and get a direct representation of how the probability changes.
 

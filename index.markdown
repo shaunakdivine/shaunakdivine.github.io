@@ -14,6 +14,9 @@ Hi, I'm Shaunak! I'm passionate about finance, machine learning, and engineering
 - **[Misinformation Detection](projects/project1/)** - A study on misinformation spread on Reddit.
 - **[Author Prediction](projects/project2)** - A project to predict authors with a text-similarity based graph.
 
+## Recent Blogs
+- **[Understanding Coin Flips, Probability, and Bayes' Rule – A Deeper Dive](blog/blog1/)** - A deep exploration of Bayes' Rule and probability simulations.
+
 
 ## Contact Me
 - [Email Me](mailto:shaunak.divine@gmail.com)
