@@ -15,7 +15,7 @@ Hi, I'm Shaunak! I'm passionate about finance, machine learning, and engineering
 - **[Author Prediction](projects/project2)** - A project to predict authors with a text-similarity based graph.
 
 ## Recent Blogs
-- **[Understanding Coin Flips, Probability, and Bayes' Rule – A Deeper Dive | 9/12/2024](blog/blog1/)** - A deep exploration of Bayes' Rule and probability simulations.
+- **[Understanding Coin Flips, Probability, and Bayes' Rule – A Deeper Dive (9/12/2024)](blog/blog1/)** - A deep exploration of Bayes' Rule and probability simulations.
 
 
 ## Contact Me
