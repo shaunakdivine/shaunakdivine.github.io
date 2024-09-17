@@ -8,6 +8,7 @@ permalink: /blog/blog1/
 ---
 
 # Understanding Coin Flips, Probability, and Bayes' Rule – A Deeper Dive
+### September 12, 2024
 
 Recently, I received a thought-provoking technical question that explores probability and Bayes' Rule. It's a fun problem that seems complicated at first but can simplify down with some creative mental math. The question goes like this:
 
