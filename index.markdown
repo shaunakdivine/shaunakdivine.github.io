@@ -12,6 +12,7 @@ Hi, I'm Shaunak! I'm passionate about finance, machine learning, and engineering
 
 ## Featured Projects
 - **[Misinformation Detection](projects/project1/)** - A study on misinformation spread on Reddit.
+- **[Daily Market Update Email](projects/project3/)** - Python script I created to send me a daily market update email using an API.
 - **[Author Prediction](projects/project2)** - A project to predict authors with a text-similarity based graph.
 
 ## Recent Blogs
