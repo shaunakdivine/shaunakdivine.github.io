@@ -31,10 +31,12 @@ It pulls market data for multiple symbols and headlines from leading financial n
 
 ```python
 import requests
+import feedparser
 from datetime import datetime
 import os
 import smtplib
 from email.mime.text import MIMEText
+
 
 API_KEY = os.getenv('RAPIDAPI_KEY')
 
@@ -52,45 +54,98 @@ def get_yahoo_finance_data(symbol):
     else:
         return None
 
-def print_yahoo_finance_data(symbol, data):
+def format_finance_data(symbol, data):
     if data:
         return (f"{symbol} Data:\n"
-                f"Price: ${data['regularMarketPrice']}\n"
-                f"Previous Close: ${data['regularMarketPreviousClose']}\n"
-                f"Change: {data['regularMarketChange']} ({data['regularMarketChangePercent']}%)\n"
-                f"Volume: {data['regularMarketVolume']}\n\n")
+                f"  Price: ${data['regularMarketPrice']:,.2f}\n"
+                f"  Previous Close: ${data['regularMarketPreviousClose']:,.2f}\n"
+                f"  Change: {data['regularMarketChange']:.2f} ({data['regularMarketChangePercent']:.2f}%)\n"
+                f"  Volume: {data['regularMarketVolume']:,}\n")
     else:
-        return f"No data found for {symbol}.\n\n"
+        return f"{symbol} Data: No data available.\n"
 
-def fetch_and_print_data():
-    result = f"Good morning, market update time! Fetching data at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} CT\n\n"
+
+        
+
+def fetch_and_format_data():
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    result = f"Good afternoon, market update time! Fetching data at {timestamp} CT\n\n"
     
     symbols = ['^DJI', '^GSPC', '^IXIC', '^VIX', 'GC=F', 'CL=F', 'BTC-USD', '^TNX']
-    result += """
-    Symbol Definitions:
-    -------------------
-    Dow Jones Industrial Average:  ^DJI
-    S&P 500 Index:                 ^GSPC
-    NASDAQ Composite Index:        ^IXIC
-    Volatility Index (VIX):        ^VIX
-    Gold Futures:                  GC=F
-    WTI Crude Oil Futures:         CL=F
-    Bitcoin (BTC) to USD:          BTC-USD
-    10-Year Treasury Yield:        ^TNX
-    -------------------
-    \n\n
-    """
+   
+    result += (
+        "****************************************\n"
+        "*            Market Overview            *\n"
+        "****************************************\n"
+        "Symbol Definitions:\n"
+        "-------------------\n"
+        "  Dow Jones Industrial Average:  ^DJI\n"
+        "  S&P 500 Index:                 ^GSPC\n"
+        "  NASDAQ Composite Index:        ^IXIC\n"
+        "  Volatility Index (VIX):        ^VIX\n"
+        "  Gold Futures:                  GC=F\n"
+        "  WTI Crude Oil Futures:         CL=F\n"
+        "  Bitcoin (BTC) to USD:          BTC-USD\n"
+        "  10-Year Treasury Yield:        ^TNX\n"
+        "-------------------\n\n"
+    )
     
     for symbol in symbols:
         data = get_yahoo_finance_data(symbol)
-        result += print_yahoo_finance_data(symbol, data)
+        result += format_finance_data(symbol, data) + "\n"
     
     return result
 
+def get_financial_news_from_rss():
+    rss_feed_url = "https://www.cnbc.com/id/100003114/device/rss/rss.html"  
+    feed = feedparser.parse(rss_feed_url)
+
+    if 'entries' in feed and len(feed.entries) > 0:
+        headlines = "\n".join([f"- {entry.title}" for entry in feed.entries[:6]])  
+        return (
+            "****************************************\n"
+            "*    Top Financial Headlines from CNBC   *\n"
+            "****************************************\n"
+            f"{headlines}\n\n\n"
+        )
+    else:
+        return (
+            "****************************************\n"
+            "*    Top Financial Headlines from CNBC   *\n"
+            "****************************************\n"
+            "\nNo financial news available at the moment.\n"
+        )
+    
+
+def get_wsj_headlines():
+    wsj_rss_url = "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"  
+    feed = feedparser.parse(wsj_rss_url)
+
+    if 'entries' in feed and len(feed.entries) > 0:
+        headlines = "\n".join([f"- {entry.title}" for entry in feed.entries[:6]])  
+        return (
+            "****************************************\n"
+            "*    Top Financial Headlines from WSJ    *\n"
+            "****************************************\n"
+            f"{headlines}\n\n\n"
+        )
+    else:
+        return (
+            "****************************************\n"
+            "*    Top Financial Headlines from WSJ    *\n"
+            "****************************************\n"
+            "\nNo financial news available at the moment.\n"
+        )
+
 def send_email(body):
+    
     sender_email = "shaunakmarketupdate@gmail.com"
-    receiver_email = ["shaunak.divine@gmail.com"]
-    password = #insert own password
+    receiver_email = [
+        #input emails
+    ]
+    
+
+    password = #input password
 
     recipients_str = ", ".join(receiver_email)
 
@@ -110,11 +165,14 @@ def send_email(body):
         print(f"Error sending email: {e}")
 
 if __name__ == "__main__":
+    data = fetch_and_format_data()
+    cnbc_news = get_financial_news_from_rss()
+    wsj_news = get_wsj_headlines()
     
-    data = fetch_and_print_data()
+    full_body = data + cnbc_news + wsj_news
     
-    
-    send_email(data)
+    send_email(full_body)
+
 ```
 ## Sample Output
 
