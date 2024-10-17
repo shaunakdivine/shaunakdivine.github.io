@@ -9,13 +9,25 @@ permalink: /projects/project3/
 
 # Automating Market Updates with Python, Yahoo Finance API, and Windows Task Scheduler
 
-In this project, I created a Python script that fetches market data and sends it to me via email. I wanted to be able to wake up with all the quick market information that is important to me in one easy to find place. To automate this process, I used **Windows Task Scheduler** to ensure the script runs automatically every weekday morning at 8:30 AM, without requiring manual intervention. It provides me with information on the Dow Jones Industrial Average, S&P 500 Index, NASDAQ Composite Index, Volatility Index (VIX), Gold Futures, WTI Crude Oil Futures, Bitcoin, and the 10-Year Treasury Yield. This was a quick but interesting build as it allowed me to get more in depth with Windows Task Scheduler and Python Email libraries for the first time. It is also a very useful project as the returned information can be easily changed and customized as my portfolio interests adjust. 
+In this project, I created a Python script that not only fetches key market data but also aggregates top financial news headlines from **CNBC** and **The Wall Street Journal (WSJ)**, sending it all to my friends and me via email. I wanted to automate the process of receiving the latest market data and top financial headlines in one place, ensuring that I start each weekday morning with relevant and up-to-date information.
+
+The script fetches market data for the **Dow Jones Industrial Average**, **S&P 500 Index**, **NASDAQ Composite Index**, **Volatility Index (VIX)**, **Gold Futures**, **WTI Crude Oil Futures**, **Bitcoin (BTC to USD)**, and the **10-Year Treasury Yield**. In addition to market data, it scrapes the top six financial headlines from CNBC and WSJ via their RSS feeds, providing a comprehensive overview of the market and major news events.
+
+To automate the process, I used **Windows Task Scheduler** to run the script every weekday morning at 8:30 AM. This ensures that the market update and financial news are delivered to my inbox without requiring any manual intervention.
+
+This project was a fun and useful build as it allowed me to get hands-on experience with Python's **email automation**, **RSS feed parsing**, and **Windows Task Scheduler**. The flexibility of the script means that it can be easily customized to fetch additional market symbols or financial headlines as my portfolio and interests evolve.
 
 ## The Python Script
 
-The script uses the `requests` library to fetch financial data from Yahoo Finance and the `smtplib` library to send email updates via Gmail. It pulls data for multiple symbols and emails the results every weekday morning.
+The script uses the following key libraries:
+- **`requests`** to fetch financial data from Yahoo Finance.
+- **`feedparser`** to retrieve the top financial news headlines from CNBC and WSJ RSS feeds.
+- **`smtplib`** to send email updates via Gmail.
+  
+It pulls market data for multiple symbols and headlines from leading financial news sources, formatting everything into a well-structured email that's sent every weekday morning.
 
-### The Code
+## The Code
+
 
 ```python
 import requests
@@ -155,3 +167,19 @@ if __name__ == "__main__":
 - **Previous Close:** 3.9810002  
 - **Change:** 0.044999838 (1.1303651%)  
 - **Volume:** 0  
+
+#### Top Financial Headlines from CNBC:
+- The solid-state batteries hype is fading – prompting auto giants to consider alternatives
+- Stanley Druckenmiller says he's 'licking my wounds' from selling Nvidia too soon
+- Key change coming for 401(k) ‘max savers’ in 2025, expert says — here's what you need to know
+- Amazon goes nuclear, to invest more than $500 million to develop small modular reactors
+- Lucid shares tumble following public offering of nearly 262.5 million shares
+- Morgan Stanley shares pop 7% after beating estimates for third-quarter profit and revenue
+
+#### Top Financial Headlines from WSJ:
+- The WSJ Dollar Index Rises 0.3% to 98.22
+- Dow Edges Up; Morgan Stanley Gains on Strong Earnings
+- Storms Be Damned, Florida Keeps Building in High-Risk Areas
+- Winter Demand Concerns Weigh Down U.S. Natural Gas
+- Gold Sets Fresh High as Consumers Continue to Buy
+- A Librarian Hopes to Retire at 55 and Travel. Can She Afford It?
