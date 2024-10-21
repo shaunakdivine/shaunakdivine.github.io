@@ -15,4 +15,8 @@ This project aims to develop an ensemble classifier that combines behavioral and
 
 The combined approach of leveraging Part-Of-Speech tagging, cosine similarity, and behavioral review data has led to promising results, with our final ensemble model achieving a classification accuracy of **97.98%**. While challenges remain, particularly around the diversity of language model-generated reviews, this work provides a strong foundation for future improvements in detecting fake reviews across e-commerce platforms.
 
-[Read the full blog on my Medium!](https://medium.com/@shaunak.divine/detecting-fake-reviews-generated-by-language-models-c3688d786718)
+[Read the full blog below or check out my Medium!](https://medium.com/@shaunak.divine/detecting-fake-reviews-generated-by-language-models-c3688d786718)
+
+## Full Article:
+
+<iframe src="https://medium.com/@shaunak.divine/detecting-fake-reviews-generated-by-language-models-c3688d786718" style="width:100%; height:600px; border:none;" allowfullscreen></iframe>
